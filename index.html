@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>毕泽A2 | 博客</title>
+</head>
+<body>
+    <noscript>
+        <span class="warn">\(x_X)/</span>
+        <span class="nojs">你似乎禁用了Javascript，本网站需要Javascript才能正常运作，请在设置里启用Javascript</span>
+    </noscript>
+    <div id="menu_list" style="display: none;">
+        <div id="menu_list_container">
+            <h1 onclick="window.location.href = 'https://bza2.github.io'">
+                <b style="color: rgb(11, 103, 215);">毕泽A2</b>的个人网站
+            </h1>
+            <a href="https://bza2.github.io/intro">关于我</a>
+            <a href="https://www.bilibili.com/opus/1238886022405685285">我的OC</a>
+            <a href="https://bza2.github.io/video">视频</a>
+            <a class="actived">博客</a>
+            <a href="https://bza2.github.io/log">网站公告、日志</a>
+        </div>
+        <button id="themebtn" class="icon">
+            <span class="mdi mdi-brightness-6"></span>
+        </button>
+    </div>
+    <button id="menubt">
+        <span class="mdi mdi-menu icon"></span>
+    </button>
+    <div id="working">
+        <span>敬请期待，乐观情况下预计2026年秋完成</span>
+    </div>
+</body>
+<script src="/theme.js" type="module"></script>
+<script src="/menu.js"></script>
+<script type="module">
+    import { change_theme } from '/theme.js'
+    // 检测主题切换按钮
+    $("#themebtn").click(change_theme)
+</script>
+</html>
