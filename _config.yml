@@ -9,7 +9,7 @@ description: '毕泽A2的博客'
 keywords: 毕泽A2, bzA2, 壳拓泷, Kotoron, 博客, 个人网站
 author: bzA2
 language: zh_CN
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
