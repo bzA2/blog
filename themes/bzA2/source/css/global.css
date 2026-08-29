@@ -251,16 +251,3 @@ p {
         padding-top: 18vw;
     }
 }
-
-#working {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    letter-spacing: 5px;
-    font-weight: bold;
-    font-size: 32px;
-}

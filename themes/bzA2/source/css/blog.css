@@ -1,0 +1,15 @@
+#blog_content {
+    padding: 12vw;
+    letter-spacing: 5px;
+}
+
+#blog_working {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    #working {
+        font-size: 32px;
+    }
+}

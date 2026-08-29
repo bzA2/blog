@@ -20,7 +20,7 @@ const init_theme = () => {
 }
 
 // 更换主题
-export const change_theme = () => {
+const change_theme = () => {
     const theme = Number(localStorage.getItem("/theme"))
 
     if (theme) {
@@ -34,3 +34,5 @@ export const change_theme = () => {
 }
 
 init_theme()
+// 检测主题切换按钮
+$("#themebtn").click(change_theme)
