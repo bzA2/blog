@@ -1,2 +1,2 @@
 # 毕泽A2的博客
-施工中
+https://bza2.github.io/blog
