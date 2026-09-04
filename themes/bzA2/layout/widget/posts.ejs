@@ -1,0 +1,33 @@
+<div class="blog_posts">
+    <div class="bposts">
+        <% posts.forEach(post => { %>
+            <%- partial(
+                    'widget/blog_card', 
+                    {
+                        title: post.title,
+                        post_date: post.date,
+                        categories: post.categories,
+                        content: post.excerpt ? post.excerpt : post.content,
+                        tags: post.tags,
+                        post_path: post.path
+                    }
+                )
+            %>
+        <% }) %>
+    </div>
+    <div class="bp_pages">
+        <% 
+            const prev_text = "<span class='mdi mdi-arrow-left-thick'></span>"
+            const next_text = "<span class='mdi mdi-arrow-right-thick'></span>"
+        %>
+        <div class="bp_pages_main">
+            <%- 
+                paginator({
+                    prev_text: prev_text,
+                    next_text: next_text,
+                    escape: false
+                }) 
+            %>
+        </div>
+    </div>
+</div>

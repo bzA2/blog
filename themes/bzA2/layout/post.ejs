@@ -1,0 +1,30 @@
+<div id="post_container">
+    <article>
+        <div id="post_content">
+            <div id="post_info">
+                <span id="post_title"><%= page.title %></span>
+                <span id="post_date"><%= date(page.date, 'YYYY-MM-DD') %> <%= time(page.date, 'HH:mm') %></span>
+                <span id="post_cat">
+                    <% page.categories.forEach(cat => { %>
+                        <span class="post_cat"><%= cat.name %></span>
+                    <% }) %>
+                </span>
+            </div>
+            <div id="post_main">
+                <%- page.content %>
+            </div>
+            <div id="post_tags">
+                <% page.tags.forEach(tag => { %>
+                    <a href="/blog/<%= tag.path %>" class="post_tag">&#35; <%= tag.name %></a>
+                <% }) %>
+            </div>
+        </div>
+    </article>
+    <div id="contents">
+        <span id="c_head">目录</span>
+        <div id="contents_container">
+            <ol></ol>
+        </div>
+    </div>
+</div>
+<%- js('js/contents.js') %>

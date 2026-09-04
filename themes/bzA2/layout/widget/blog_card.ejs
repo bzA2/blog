@@ -1,0 +1,23 @@
+<div class="blog_card">
+    <span class="blog_card_date">
+        <time class="bc_date">
+            <%- date(post_date, 'YYYY-MM-DD') %>
+            <%- time(post_date, 'HH:mm') %>
+        </time>
+        <% categories.forEach(cat => { %>
+            <a href="/blog/<%= cat.path %>"><span class="bc_cat"><%= cat.name %></span></a>
+        <% }) %>
+    </span>
+    <h1 class="blog_card_title"><%= title %></h1>
+    <div class="blog_card_content">
+        <article>
+            <%- content %>
+        </article>
+    </div>
+    <div class="blog_card_tags">
+        <% tags.forEach(tag => { %>
+            <a class="bc_tag" href="/blog/<%= tag.path %>">&#35; <%= tag.name %></a>
+        <% }) %>
+    </div>
+    <a href="/blog/<%= post_path %>" class="read_more">阅读全文 &gt;</a>
+</div>

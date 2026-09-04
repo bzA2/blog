@@ -1,3 +1,49 @@
-<div id="blog_working">
-    <span id="working">正在施工中，预计2026年秋完成</span>
+<div id="hello">
+    <h1 id="blog_head">
+        博客
+    </h1>
+</div>
+<div id="index_content">
+    <div id="index_posts">
+        <%- partial('widget/posts', { posts: page.posts }) %>
+    </div>
+    <div id="index_sidebar">
+        <div class="sd_board" id="sd_info">
+            <%- image_tag('/img/avatar.jpg', { id: 'idx_avatar', width: 150, height: 150 }) %>
+            <span id="sdi_name">毕泽A2</span>
+            <span id="sdi_desc">一名业余创作者，尤其是绘画和同人</span>
+            <div id="sdi_numbers">
+                <div class="sdin_slot">
+                    <span class="sdins_con">文章</span>
+                    <span class="sdins_num"><%= site.posts.length %></span>
+                </div>
+                <div class="sdin_slot">
+                    <span class="sdins_con">类型</span>
+                    <span class="sdins_num"><%= site.categories.length %></span>
+                </div>
+                <div class="sdin_slot">
+                    <span class="sdins_con">标签</span>
+                    <span class="sdins_num"><%= site.tags.length %></span>
+                </div>
+            </div>
+        </div>
+        <div class="sd_board" id="sd_cats">
+            <span class="sd_head">类型</span>
+            <%- list_categories({ class: 'sd_cat', show_count: false }) %>
+        </div>
+        <div class="sd_board" id="sd_tags">
+            <span class="sd_head">标签</span>
+            <div id="sdt_container">
+                <% site.tags.data.forEach(tag => { %>
+                    <a href="/blog/<%= tag.path %>">
+                        <span class="sdt_tag">&#35; <%= tag.name %></span>
+                    </a>
+                <% }) %>
+            </div>
+        </div>
+        <div class="sd_board" id="sd_archs">
+            <span class="sd_head">归档</span>
+            <%- list_archives({ show_count: false, style: false, separator: '', class: 'sd_arch', format: 'YYYY MMMM' }) %>
+        </div>
+    </div>
 </div>

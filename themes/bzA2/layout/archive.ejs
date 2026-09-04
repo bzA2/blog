@@ -1,0 +1,45 @@
+<div id="arch_container">
+    <h1 id="arch_title">我的博客归档</h1>
+    <div id="archive_content">
+        <% let date_p %>
+        <% let month_p %>
+        <% page.posts.forEach(post => { %>
+            <% if (date(post.date, "YYYY") !== date_p) { %>
+                <% date_p = date(post.date, "YYYY") %>
+                <a href="/blog/archives/<%= date_p %>">
+                    <h2 class="archive_year"><%= date_p %></h2>
+                </a>
+            <% } %>
+            <% if (date(post.date, "MM") !== month_p) { %>
+                <% month_p = date(post.date, "MM") %>
+                <a href="/blog/archives/<%= date_p %>/<%= month_p %>">
+                    <h2 class="archive_month"><%= month_p %></h2>
+                </a>
+            <% } %>
+            <a href="/blog/<%= post.path %>">
+                <div class="blog_card_mini">
+                    <h3 class="bcm_title"><%= post.title %></h3>
+                    <time class="bcm_time">
+                        <%= date(post.date, "YYYY-MM-DD") %>
+                        <%= time(post.date, "HH:mm") %>
+                    </time>
+                </div>
+            </a>
+        <% }) %>
+    </div>
+    <div class="bp_pages">
+        <div class="bp_pages_main">
+            <% 
+                const prev_text = "<span class='mdi mdi-arrow-left-thick'></span>"
+                const next_text = "<span class='mdi mdi-arrow-right-thick'></span>"
+            %>
+            <%- 
+                paginator({
+                    prev_text: prev_text,
+                    next_text: next_text,
+                    escape: false
+                }) 
+            %>
+        </div>
+    </div>
+</div>
