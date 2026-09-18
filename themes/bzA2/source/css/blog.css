@@ -9,6 +9,12 @@ html, body {
     padding-right: 12vw;
     padding-top: 10vw;
     padding-bottom: 1vw;
+
+    @media screen and (max-width: 800px) {
+        padding-left: 8vw;
+        padding-right: 8vw;
+        padding-top: 15vw;
+    }
 }
 
 footer {
@@ -21,7 +27,7 @@ footer {
     box-sizing: border-box;
 
     span, a {
-        font-size: 18px;
+        font-size: 14px;
         font-weight: bold;
         letter-spacing: 5px;
     }
@@ -583,6 +589,10 @@ footer {
             font-size: 18px;
             margin-block-start: 15px;
             margin-block-end: 15px;
+
+            @media screen and (max-width: 800px) {
+                font-size: 16px;
+            }
         }
 
         a {
