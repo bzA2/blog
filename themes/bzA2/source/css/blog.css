@@ -330,6 +330,12 @@ footer {
             margin-block-end: 10px;
         }
 
+        @media screen and (max-width: 800px) {
+            p, a {
+                font-size: 15px;
+            }
+        }
+
         a {
             color: rgb(255, 35, 145);
         }
